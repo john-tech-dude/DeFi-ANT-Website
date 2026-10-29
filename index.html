@@ -46,15 +46,12 @@
       content: "\f7a3";
     }
 
-    /* Import comic-style font */
-    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap');
-
     /* Reset and base styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Comic Neue", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     :root {
@@ -66,9 +63,6 @@
       --flag-red: #c8102e;
       --flag-blue: #002868;
       --gold-yellow: #ff7700;
-      --comic-yellow: #FFE135;
-      --comic-blue: #00A4E4;
-      --comic-red: #FF2E2E;
       --bg-color: #1a1a2e;
       --glass-bg: rgba(26, 26, 46, 0.7);
       --glass-bg-hover: rgba(30, 40, 60, 0.85);
@@ -99,7 +93,7 @@
       color: var(--text-color);
       overflow-x: hidden;
       line-height: 1.6;
-      font-family: "Comic Neue", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       position: relative;
     }
 
@@ -122,20 +116,6 @@
       z-index: 0;
     }
 
-    /* Halftone pattern overlay */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 8px 8px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
     @keyframes gradientBG {
       0% {
         background-position: 0% 50%;
@@ -151,92 +131,6 @@
     #content {
       position: relative;
       z-index: 1;
-    }
-
-    /* Comic panel styles */
-    .comic-panel {
-      position: relative;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-      border: 4px solid var(--primary-color);
-      border-radius: 8px;
-      padding: 2rem;
-      margin: 2rem 0;
-      box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
-      transform: rotate(-1deg);
-      transition: all 0.3s ease;
-    }
-
-    .comic-panel:nth-child(even) {
-      transform: rotate(1deg);
-      border-color: var(--comic-yellow);
-    }
-
-    .comic-panel:nth-child(3n) {
-      transform: rotate(-0.5deg);
-      border-color: var(--comic-blue);
-    }
-
-    .comic-panel:hover {
-      transform: rotate(0deg) scale(1.02);
-      box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.4);
-    }
-
-    /* Speech bubble */
-    .speech-bubble {
-      position: relative;
-      background: white;
-      color: #1a1a2e;
-      border-radius: 20px;
-      padding: 1.5rem;
-      margin: 1rem 0;
-      font-weight: bold;
-      border: 3px solid var(--primary-color);
-    }
-
-    .speech-bubble::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      left: 30px;
-      border-width: 20px 20px 0;
-      border-style: solid;
-      border-color: var(--primary-color) transparent;
-    }
-
-    .speech-bubble::before {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 34px;
-      border-width: 16px 16px 0;
-      border-style: solid;
-      border-color: white transparent;
-      z-index: 1;
-    }
-
-    /* Animated ant mascot */
-    .ant-mascot {
-      font-size: 4rem;
-      animation: bounce 2s infinite;
-      display: inline-block;
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
-    }
-
-    /* Section title comic style */
-    .section-title {
-      font-family: 'Bangers', cursive;
-      font-size: 3rem;
-      text-shadow: 4px 4px 0 var(--primary-color), 8px 8px 0 rgba(0, 0, 0, 0.3);
-      letter-spacing: 3px;
-      text-transform: uppercase;
     }
 
     /* Navbar styles */
@@ -2418,22 +2312,20 @@
 
     <section class="hero">
       <div class="hero-content">
-        <div class="comic-panel">
-          <div class="ant-mascot">🐜</div>
-          <h1 class="section-title">
-            <span class="text-white">DEFI</span><span class="text-primary">ANT!</span>
-          </h1>
-          <div class="speech-bubble">
-            <p>Every revolution began with a single act of defiance. Join the ANT ARMY and let's take over DeFi together! 🚀</p>
-          </div>
-          <div class="slogan">
-            <span class="revolution-text">JOIN THE REVOLUTION!</span>
-            <div class="revolution-underline"></div>
-          </div>
+        <h1>
+          <span class="text-white">DEFI</span><span class="text-primary">ANT!</span>
+        </h1>
+        <div class="slogan">
+          <span class="revolution-text">JOIN THE REVOLUTION!</span>
+          <div class="revolution-underline"></div>
         </div>
+        <p>
+          Every revolution began with a single act of defiance. Be part of the
+          movement that's redefining DeFi on Solana.
+        </p>
 
         <!-- Updated image container with lazy loading -->
-        <div class="hero-image-container comic-panel">
+        <div class="hero-image-container">
           <img src="https://i.imgur.com/wgBr5ua.jpg" alt="DeFi ANTS Revolution" loading="lazy" />
         </div>
 
@@ -2515,19 +2407,19 @@
       </p>
 
       <div class="about-features">
-        <div class="glass-card feature-card comic-panel">
+        <div class="glass-card feature-card">
           <i class="fas fa-bolt"></i>
           <h3>⚡ Lightning Fast</h3>
           <p>
             Built on Solana for incredible transaction speeds and minimal fees
           </p>
         </div>
-        <div class="glass-card feature-card comic-panel">
+        <div class="glass-card feature-card">
           <i class="fas fa-shield-alt"></i>
           <h3>🛡️ Battle-Tested Security</h3>
           <p>Military-grade security protocols to protect your investment</p>
         </div>
-        <div class="glass-card feature-card comic-panel">
+        <div class="glass-card feature-card">
           <i class="fas fa-users"></i>
           <h3>👥 Community Governed</h3>
           <p>Join an army of believers who decide the future direction</p>
@@ -2549,7 +2441,7 @@
       </div>
 
       <div class="tokenomics-details">
-        <div class="glass-card comic-panel" style="padding: 2rem; text-align: center">
+        <div class="glass-card" style="padding: 2rem; text-align: center">
           <h3 style="margin-bottom: 1.5rem; color: var(--primary-color)">
             Advanced Tokenomics Features
           </h3>

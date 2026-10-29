@@ -910,6 +910,31 @@
       border: 2px solid var(--primary-color) !important;
     }
 
+    /* Connect Wallet Button */
+    .connect-wallet-btn {
+      background: linear-gradient(135deg, var(--primary-color), var(--gold-yellow));
+      color: #1a1a2e;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .connect-wallet-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+    }
+
+    .connect-wallet-btn.connected {
+      background: linear-gradient(135deg, #4caf50, #8bc34a);
+    }
+
     .price-widget:hover {
       transform: translateY(-5px) scale(1.05);
       background-color: var(--glass-bg-hover);
@@ -2034,7 +2059,8 @@
         right: 0;
       }
 
-      .nav-links a {
+      .nav-links a,
+      .nav-links button {
         margin: 15px 0;
         font-size: 18px;
       }
@@ -2242,6 +2268,10 @@
         <a href="#resources">Resources</a>
         <a href="#community">Community</a>
         <a href="#faq">FAQs</a>
+        <button id="connectWalletBtn" class="connect-wallet-btn">
+          <i class="fas fa-wallet"></i>
+          <span id="walletBtnText">Connect Wallet</span>
+        </button>
       </div>
       <div class="hamburger" id="hamburger">
         <span></span>
@@ -2859,9 +2889,9 @@
           hamburger.classList.toggle("active");
           navLinks.classList.toggle("active");
         });
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll(".nav-links a").forEach((link) => {
-          link.addEventListener("click", () => {
+        // Close mobile menu when clicking on a link or button
+        document.querySelectorAll(".nav-links a, .nav-links button").forEach((element) => {
+          element.addEventListener("click", () => {
             hamburger.classList.remove("active");
             navLinks.classList.remove("active");
           });
@@ -3247,6 +3277,92 @@
         }
       });
     });
+
+    // Phantom Wallet Connection
+    const connectWalletBtn = document.getElementById('connectWalletBtn');
+    const walletBtnText = document.getElementById('walletBtnText');
+    let isConnected = false;
+    let publicKey = null;
+
+    // Get Phantom provider
+    const getProvider = () => {
+      if ('phantom' in window) {
+        const provider = window.phantom.solana;
+
+        if (provider?.isPhantom) {
+          return provider;
+        }
+      }
+
+      window.open('https://phantom.app/', '_blank');
+    };
+
+    // Connect wallet function
+    const connectWallet = async () => {
+      try {
+        const provider = getProvider();
+        if (!provider) return;
+
+        const resp = await provider.connect();
+        publicKey = resp.publicKey.toString();
+        isConnected = true;
+
+        // Update UI
+        walletBtnText.textContent = `${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`;
+        connectWalletBtn.classList.add('connected');
+
+        // Listen for disconnect events
+        provider.on('disconnect', () => {
+          isConnected = false;
+          publicKey = null;
+          walletBtnText.textContent = 'Connect Wallet';
+          connectWalletBtn.classList.remove('connected');
+        });
+
+      } catch (err) {
+        console.error('Wallet connection error:', err);
+      }
+    };
+
+    // Disconnect wallet function
+    const disconnectWallet = async () => {
+      try {
+        const provider = getProvider();
+        if (provider && isConnected) {
+          await provider.disconnect();
+          isConnected = false;
+          publicKey = null;
+          walletBtnText.textContent = 'Connect Wallet';
+          connectWalletBtn.classList.remove('connected');
+        }
+      } catch (err) {
+        console.error('Wallet disconnect error:', err);
+      }
+    };
+
+    // Event listener for connect button
+    if (connectWalletBtn) {
+      connectWalletBtn.addEventListener('click', () => {
+        if (isConnected) {
+          disconnectWallet();
+        } else {
+          connectWallet();
+        }
+      });
+
+      // Check if already connected on page load
+      if ('phantom' in window && window.phantom.solana?.isPhantom) {
+        const provider = window.phantom.solana;
+        if (provider.isConnected) {
+          publicKey = provider.publicKey?.toString();
+          if (publicKey) {
+            isConnected = true;
+            walletBtnText.textContent = `${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`;
+            connectWalletBtn.classList.add('connected');
+          }
+        }
+      }
+    }
   </script>
 </body>
 

@@ -2314,6 +2314,12 @@
                 <i class="fas fa-times"></i>
               </button>
             </div>
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+              <button id="connectWalletPanelBtn" class="connect-wallet-btn" style="width: 100%; justify-content: center; padding: 1rem;">
+                <i class="fas fa-wallet"></i>
+                <span id="walletPanelBtnText">Connect Wallet</span>
+              </button>
+            </div>
             <div class="buy-options">
               <a href="https://phantom.app/" target="_blank" rel="noopener noreferrer" class="buy-option glass-card buy-option-highlighted">
                 <div class="exchange-icon">
@@ -3281,6 +3287,8 @@
     // Phantom Wallet Connection
     const connectWalletBtn = document.getElementById('connectWalletBtn');
     const walletBtnText = document.getElementById('walletBtnText');
+    const connectWalletPanelBtn = document.getElementById('connectWalletPanelBtn');
+    const walletPanelBtnText = document.getElementById('walletPanelBtnText');
     let isConnected = false;
     let publicKey = null;
 
@@ -3297,6 +3305,22 @@
       window.open('https://phantom.app/', '_blank');
     };
 
+    // Update both wallet buttons
+    const updateWalletUI = () => {
+      if (isConnected && publicKey) {
+        const shortAddress = `${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`;
+        if (walletBtnText) walletBtnText.textContent = shortAddress;
+        if (walletPanelBtnText) walletPanelBtnText.textContent = shortAddress;
+        if (connectWalletBtn) connectWalletBtn.classList.add('connected');
+        if (connectWalletPanelBtn) connectWalletPanelBtn.classList.add('connected');
+      } else {
+        if (walletBtnText) walletBtnText.textContent = 'Connect Wallet';
+        if (walletPanelBtnText) walletPanelBtnText.textContent = 'Connect Wallet';
+        if (connectWalletBtn) connectWalletBtn.classList.remove('connected');
+        if (connectWalletPanelBtn) connectWalletPanelBtn.classList.remove('connected');
+      }
+    };
+
     // Connect wallet function
     const connectWallet = async () => {
       try {
@@ -3308,15 +3332,13 @@
         isConnected = true;
 
         // Update UI
-        walletBtnText.textContent = `${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`;
-        connectWalletBtn.classList.add('connected');
+        updateWalletUI();
 
         // Listen for disconnect events
         provider.on('disconnect', () => {
           isConnected = false;
           publicKey = null;
-          walletBtnText.textContent = 'Connect Wallet';
-          connectWalletBtn.classList.remove('connected');
+          updateWalletUI();
         });
 
       } catch (err) {
@@ -3332,15 +3354,14 @@
           await provider.disconnect();
           isConnected = false;
           publicKey = null;
-          walletBtnText.textContent = 'Connect Wallet';
-          connectWalletBtn.classList.remove('connected');
+          updateWalletUI();
         }
       } catch (err) {
         console.error('Wallet disconnect error:', err);
       }
     };
 
-    // Event listener for connect button
+    // Event listener for connect button (navbar)
     if (connectWalletBtn) {
       connectWalletBtn.addEventListener('click', () => {
         if (isConnected) {
@@ -3349,17 +3370,27 @@
           connectWallet();
         }
       });
+    }
 
-      // Check if already connected on page load
-      if ('phantom' in window && window.phantom.solana?.isPhantom) {
-        const provider = window.phantom.solana;
-        if (provider.isConnected) {
-          publicKey = provider.publicKey?.toString();
-          if (publicKey) {
-            isConnected = true;
-            walletBtnText.textContent = `${publicKey.slice(0, 4)}...${publicKey.slice(-4)}`;
-            connectWalletBtn.classList.add('connected');
-          }
+    // Event listener for connect button in buy panel
+    if (connectWalletPanelBtn) {
+      connectWalletPanelBtn.addEventListener('click', () => {
+        if (isConnected) {
+          disconnectWallet();
+        } else {
+          connectWallet();
+        }
+      });
+    }
+
+    // Check if already connected on page load
+    if ('phantom' in window && window.phantom.solana?.isPhantom) {
+      const provider = window.phantom.solana;
+      if (provider.isConnected) {
+        publicKey = provider.publicKey?.toString();
+        if (publicKey) {
+          isConnected = true;
+          updateWalletUI();
         }
       }
     }

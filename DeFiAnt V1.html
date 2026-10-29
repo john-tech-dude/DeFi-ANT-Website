@@ -1,0 +1,3239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>DEFIANT! - Join The Revolution on Solana Blockchain</title>
+  <meta name="description" content="DEFIANT! is a revolutionary community-driven token built on Solana blockchain. Join the movement that's redefining decentralized finance with lightning-fast transactions and military-grade security. Army Ant Revolution." />
+  <meta name="keywords" content="defi, ants, cryptocurrency, solana, blockchain, token, defi project, crypto investment, solana ecosystem" />
+  <meta name="author" content="DEFIANT Team" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Caching Headers -->
+  <meta http-equiv="Cache-Control" content="max-age=86400, must-revalidate" />
+  <meta http-equiv="Expires" content="1d" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.defiant.io/" />
+  <meta property="og:title" content="DEFIANT! - Join The Revolution on Solana" />
+  <meta property="og:description" content="A revolutionary community-driven token built on the Solana blockchain, designed to defy traditional finance and empower users." />
+  <meta property="og:image" content="https://www.defiant.io/images/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.defiant.io/" />
+  <meta property="twitter:title" content="DEFIANT! - Join The Revolution on Solana" />
+  <meta property="twitter:description" content="A revolutionary community-driven token built on the Solana blockchain, designed to defy traditional finance and empower users." />
+  <meta property="twitter:image" content="https://www.defiant.io/images/twitter-image.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Chart.js for interactive charts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+  <style>
+    /* Jupiter icon */
+    .fa-planet-ringed:before {
+      content: "\f7a3";
+    }
+
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root {
+      --primary-color: #ff6600;
+      --secondary-color: #b22222;
+      --accent-color: #1e3a5f;
+      --military-green: #4b5320;
+      --army-brown: #8b7355;
+      --flag-red: #c8102e;
+      --flag-blue: #002868;
+      --gold-yellow: #ff7700;
+      --bg-color: #1a1a2e;
+      --glass-bg: rgba(26, 26, 46, 0.7);
+      --glass-bg-hover: rgba(30, 40, 60, 0.85);
+      --glass-border: rgba(255, 102, 0, 0.2);
+      --glass-border-hover: rgba(255, 102, 0, 0.5);
+      --text-color: #ffffff;
+      --text-muted: #cccccc;
+      --navbar-height: 75px;
+      --gold-glow: rgba(255, 102, 0, 0.5);
+      --red-glow: rgba(200, 16, 46, 0.4);
+      --blue-glow: rgba(0, 40, 104, 0.4);
+      /* Define navbar height to use in calculations */
+      /* Consistent spacing scale */
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 2rem;
+      --spacing-lg: 4rem;
+      --spacing-xl: 6rem;
+      --spacing-xxl: 8rem;
+      /* Section spacing */
+      --section-spacing: var(--spacing-xl);
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+      background-size: 200% 200%;
+      animation: gradientBG 20s ease infinite;
+      color: var(--text-color);
+      overflow-x: hidden;
+      line-height: 1.6;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          rgba(75, 83, 32, 0.03) 0px,
+          rgba(75, 83, 32, 0.03) 2px,
+          transparent 2px,
+          transparent 10px
+        );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    #content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 5%;
+      background: linear-gradient(180deg, rgba(26, 26, 46, 0.95) 0%, rgba(30, 40, 60, 0.9) 100%);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      height: var(--navbar-height);
+      z-index: 100;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid var(--primary-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar:hover {
+      background: linear-gradient(180deg, rgba(30, 40, 60, 0.95) 0%, rgba(35, 45, 65, 0.9) 100%);
+      box-shadow: 0 6px 25px rgba(255, 215, 0, 0.2);
+    }
+
+    /* New logo hover effect */
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      position: relative;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+    }
+
+    .logo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, var(--blue-glow), transparent 70%);
+      border-radius: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+      filter: blur(5px);
+    }
+
+    .logo:hover::before {
+      opacity: 1;
+      animation: subtlePulse 2s infinite;
+    }
+
+    @keyframes subtlePulse {
+      0% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 0.3;
+      }
+    }
+
+    .logo img {
+      height: 2rem;
+    }
+
+    .logo span.defi {
+      color: white;
+      transition: all 0.3s ease;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo span.ant {
+      color: var(--primary-color);
+      transition: all 0.3s ease;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo:hover span.defi,
+    .logo:hover span.ant {
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: linear-gradient(90deg, var(--primary-color), var(--flag-red));
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    }
+
+    .nav-links a:hover {
+      transform: translateY(-3px) scale(1.05);
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+      cursor: pointer;
+      z-index: 101;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: white;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    /* Price widget - UPDATED for live ticker */
+    .price-widget {
+      position: fixed;
+      top: calc(var(--navbar-height) + 1rem);
+      right: 2rem;
+      background-color: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 0.8rem 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid var(--glass-border);
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s;
+      box-shadow: 0 8px 32px rgba(0, 0, 20, 0.2);
+    }
+
+    /* Hero section - IMPROVED SPACING */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      /* Reduced padding here for better spacing from navbar to slogan */
+      padding-top: calc(var(--navbar-height) + 2rem);
+      padding-bottom: 3rem;
+      position: relative;
+      margin-bottom: var(--section-spacing);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+      padding-top: 2rem;
+      /* Reduced from 3rem for better vertical rhythm */
+    }
+
+    /* Hero image styles - FIXED positioning and spacing */
+    .hero-image-container {
+      margin: 2rem auto;
+      position: relative;
+      display: inline-block;
+      max-width: 80%;
+      width: 500px;
+      transition: all 0.5s ease;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                  0 0 40px rgba(255, 215, 0, 0.2);
+      border: 3px solid var(--primary-color);
+    }
+
+    .hero-image-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 6px;
+      pointer-events: none;
+    }
+
+    .hero-image-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: all 0.5s ease;
+      border-radius: 6px;
+    }
+
+    .hero-image-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%,
+          rgba(255, 127, 0, 0.2),
+          transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-image-container:hover {
+      transform: scale(1.05) translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6),
+        0 0 50px rgba(255, 215, 0, 0.4),
+        0 0 80px rgba(200, 16, 46, 0.2);
+      border-color: var(--gold-yellow);
+    }
+
+    .hero-image-container:hover::before {
+      opacity: 1;
+    }
+
+    .hero-image-container:hover img {
+      transform: scale(1.05);
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .slogan {
+      margin: 0.5rem 0 1.5rem;
+      position: relative;
+    }
+
+    .revolution-text {
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      background: linear-gradient(180deg, var(--primary-color) 0%, var(--gold-yellow) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 0 15px;
+      position: relative;
+      z-index: 1;
+      text-transform: uppercase;
+    }
+
+    .revolution-underline {
+      height: 10px;
+      width: 100%;
+      max-width: 300px;
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(255, 127, 0, 0.5),
+          transparent);
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+      z-index: 0;
+      animation: pulse-underline 3s infinite;
+    }
+
+    @keyframes pulse-underline {
+      0% {
+        opacity: 0.7;
+        width: 200px;
+      }
+
+      50% {
+        opacity: 1;
+        width: 300px;
+      }
+
+      100% {
+        opacity: 0.7;
+        width: 200px;
+      }
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .btn {
+      padding: 0.8rem 1.8rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color), var(--gold-yellow));
+      color: #1a1a2e;
+      border: 2px solid var(--primary-color);
+      position: relative;
+      overflow: hidden;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--gold-yellow), var(--primary-color));
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(255, 102, 0, 0.5),
+                  0 0 40px rgba(255, 102, 0, 0.3);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 215, 0, 0.1);
+      border-color: var(--flag-red);
+      color: var(--flag-red);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(200, 16, 46, 0.4);
+    }
+
+    /* Glass card styles */
+    .glass-card {
+      background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(30, 40, 60, 0.7) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 0.5rem;
+      border: 2px solid var(--glass-border);
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 20, 0.3);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Military-style corner accents */
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg,
+          rgba(255, 102, 0, 0.1) 0%,
+          transparent 50%,
+          rgba(200, 16, 46, 0.05) 100%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: -1;
+    }
+
+    .glass-card::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      border: 1px solid rgba(255, 102, 0, 0.1);
+      border-radius: 0.3rem;
+      pointer-events: none;
+    }
+
+    .glass-card:hover::before {
+      opacity: 1;
+    }
+
+    .glass-card:hover {
+      background: linear-gradient(135deg, rgba(30, 40, 60, 0.9) 0%, rgba(35, 45, 65, 0.85) 100%);
+      transform: translateY(-8px) scale(1.02);
+      border-color: var(--primary-color);
+      box-shadow: 0 15px 35px rgba(0, 0, 20, 0.5),
+        0 0 25px rgba(255, 215, 0, 0.3);
+      transition: transform 0.4s ease,
+        background-color 0.3s ease, border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .glass-card::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(45deg,
+          transparent 65%,
+          rgba(255, 127, 0, 0.1) 100%);
+      pointer-events: none;
+    }
+
+    /* IMPROVED Card title hover effects */
+    .glass-card h3 {
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-block;
+    }
+
+    .glass-card:hover h3 {
+      transform: scale(1.05);
+      text-shadow: 0 0 8px rgba(93, 156, 236, 0.7);
+    }
+
+    .glass-card h3::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: -12px;
+      right: -12px;
+      bottom: -8px;
+      background: radial-gradient(ellipse at center, rgba(93, 156, 236, 0.3), transparent 80%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+      border-radius: 6px;
+      filter: blur(7px);
+    }
+
+    .glass-card:hover h3::before {
+      opacity: 1;
+      animation: subtlePulse 2s infinite;
+    }
+
+    /* Section styles - CONSISTENT SPACING */
+    section {
+      padding: 4rem 5%;
+      margin-bottom: var(--section-spacing);
+    }
+
+    /* About section - IMPROVED SPACING */
+    #about {
+      /* Reduced padding for better connection to hero */
+      padding-top: 3rem;
+      margin-top: 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 900;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+      background: linear-gradient(180deg, var(--primary-color) 0%, var(--gold-yellow) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      position: relative;
+    }
+
+    .section-title::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -20px;
+      right: -20px;
+      bottom: -10px;
+      background: linear-gradient(135deg,
+          rgba(255, 102, 0, 0.2) 0%,
+          transparent 50%,
+          rgba(200, 16, 46, 0.1) 100%);
+      z-index: -1;
+      border-radius: 5px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--flag-red), var(--primary-color), var(--flag-blue));
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+      box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 60px;
+      background-color: var(--primary-color);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(255, 127, 0, 0.5);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .feature-card {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature-card i {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      transition: all 0.4s ease;
+      filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.3));
+    }
+
+    .feature-card:hover i {
+      transform: scale(1.15);
+      color: var(--gold-yellow);
+      text-shadow: 0 0 25px rgba(255, 102, 0, 0.8);
+      filter: drop-shadow(0 0 15px rgba(255, 102, 0, 0.5));
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1.2) rotate(5deg);
+      }
+
+      50% {
+        transform: scale(1.4) rotate(-5deg);
+      }
+
+      100% {
+        transform: scale(1.2) rotate(5deg);
+      }
+    }
+
+    .feature-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    /* Buy Panel Styles */
+    .buy-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .buy-panel.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .buy-panel-content {
+      width: 90%;
+      max-width: 600px;
+      padding: 2rem;
+      background: rgba(20, 30, 60, 0.9);
+      border-radius: 1rem;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: translateY(30px);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .buy-panel.active .buy-panel-content {
+      transform: translateY(0);
+    }
+
+    .buy-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 1rem;
+    }
+
+    .buy-panel-header h3 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin: 0;
+    }
+
+    .close-panel {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .close-panel:hover {
+      color: var(--primary-color);
+      transform: rotate(90deg);
+    }
+
+    .buy-options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .buy-option {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem;
+      border-radius: 0.8rem;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s;
+    }
+
+    .buy-option:hover {
+      transform: translateY(-5px) scale(1.02);
+      background-color: rgba(30, 40, 70, 0.8);
+    }
+
+    .exchange-icon {
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 1rem;
+    }
+
+    .exchange-icon i {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .exchange-details {
+      flex: 1;
+    }
+
+    .exchange-details h4 {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.2rem;
+    }
+
+    .exchange-details p {
+      margin: 0;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    .buy-option .fa-arrow-right {
+      margin-left: 1rem;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s;
+    }
+
+    .buy-option:hover .fa-arrow-right {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .price-widget:hover {
+      transform: translateY(-5px) scale(1.05);
+      background-color: var(--glass-bg-hover);
+      border-color: var(--glass-border-hover);
+      box-shadow: 0 15px 35px rgba(0, 0, 20, 0.4),
+                  0 0 20px rgba(255, 127, 0, 0.3);
+    }
+
+    .price-widget:hover .price {
+      transform: scale(1.1);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+
+    .price-widget:hover .change {
+      transform: scale(1.1);
+      text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    }
+
+    .price-widget .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .price-widget .change {
+      color: #00ff00;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: all 0.3s ease;
+    }
+
+    /* Live Price Ticker */
+    .ticker-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      color: white;
+      z-index: 99;
+      overflow: hidden;
+      height: 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ticker-wrapper {
+      white-space: nowrap;
+      animation: ticker 30s linear infinite;
+      display: flex;
+      align-items: center;
+    }
+
+    .ticker-item {
+      margin: 0 20px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .ticker-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    .price-up {
+      color: #00ff00;
+    }
+
+    .price-down {
+      color: #ff0000;
+    }
+
+    @keyframes ticker {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Tokenomics section */
+    .tokenomics-details {
+      margin: 3rem 0;
+    }
+
+    /* Pie chart container */
+    .chart-container {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      padding: 2rem;
+    }
+
+    .tokenomics-details {
+      margin: 3rem 0;
+    }
+
+    .tokenomics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .tokenomics-card {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .tokenomics-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .tokenomics-card p {
+      font-size: 1.8rem;
+      font-weight: 900;
+      transition: all 0.4s ease;
+      color: var(--gold-yellow);
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .tokenomics-card:hover p {
+      transform: scale(1.1);
+      color: var(--primary-color);
+      text-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    }
+
+    .token-address {
+      background-color: rgba(0, 0, 20, 0.3);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      word-break: break-all;
+      font-family: monospace;
+      font-size: 0.9rem;
+      border: 1px solid var(--glass-border);
+    }
+
+    .token-address:hover {
+      background-color: rgba(0, 0, 20, 0.5);
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 127, 0, 0.2);
+    }
+
+    .copy-btn {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--gold-yellow));
+      border: 2px solid var(--primary-color);
+      color: #1a1a2e;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: all 0.3s;
+    }
+
+    .copy-btn:hover {
+      background: linear-gradient(135deg, var(--gold-yellow), var(--primary-color));
+      box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+    }
+
+    /* Shareable link styles */
+    .shareable-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(0, 0, 20, 0.3);
+      padding: 0.7rem 1rem;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+      border: 1px solid var(--glass-border);
+      transition: all 0.3s;
+    }
+
+    .shareable-link:hover {
+      background-color: rgba(0, 0, 20, 0.5);
+      transform: scale(1.02);
+    }
+
+    .link-text {
+      font-family: monospace;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 80%;
+    }
+
+    .copy-link-btn {
+      background: var(--primary-color);
+      border: none;
+      color: white;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+    }
+
+    .copy-link-btn:hover {
+      background-color: #e67300;
+    }
+
+    /* Interactive Roadmap Timeline */
+    .timeline-container {
+      max-width: 1000px;
+      margin: 4rem auto 2rem;
+      position: relative;
+      z-index: 20;
+    }
+    
+    .timeline-track {
+      position: relative;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      margin: 70px 0;
+    }
+    
+    .timeline-progress {
+      position: absolute;
+      height: 100%;
+      width: 25%;
+      background: linear-gradient(to right, var(--primary-color), #ffcc00);
+      border-radius: 3px;
+      transition: width 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .timeline-progress::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to right,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 70%
+      );
+      animation: progress-shine 3s infinite;
+    }
+    
+    .timeline-nodes {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      transform: translateY(-50%);
+    }
+    
+    .timeline-node {
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .timeline-node-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .timeline-node.active .timeline-node-dot {
+      background-color: var(--primary-color);
+      border-color: rgba(255, 127, 0, 0.5);
+      box-shadow: 0 0 15px rgba(255, 127, 0, 0.7);
+    }
+    
+    .timeline-node:hover .timeline-node-dot {
+      transform: scale(1.2);
+    }
+    
+    .timeline-label {
+      position: absolute;
+      top: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-align: center;
+      width: max-content;
+      transition: all 0.3s ease;
+    }
+    
+    .timeline-node:hover .timeline-label {
+      color: var(--primary-color);
+      transform: translateX(-50%) scale(1.1);
+    }
+    
+    .timeline-details {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(20, 30, 50, 0.95);
+      backdrop-filter: blur(15px);
+      border-radius: 10px;
+      border: 1px solid var(--glass-border);
+      padding: 1.5rem;
+      width: 300px;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      z-index: 100;
+    }
+    
+    .timeline-node:hover .timeline-details {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(5px);
+    }
+    
+    .timeline-details::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 0 10px 10px 10px;
+      border-style: solid;
+      border-color: transparent transparent var(--glass-bg) transparent;
+    }
+    
+    .timeline-details h4 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+    }
+    
+    .timeline-details p {
+      margin-bottom: 0.7rem;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    .timeline-details .task-list {
+      list-style-type: none;
+      text-align: left;
+      margin-top: 1rem;
+    }
+    
+    .timeline-details .task-list li {
+      padding: 0.4rem 0;
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    
+    .timeline-details .task-list li::before {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      margin-right: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      flex-shrink: 0;
+    }
+    
+    .timeline-details .task-list li.completed::before {
+      background-color: #00c851;
+    }
+    
+    .timeline-details .task-list li.in-progress::before {
+      background-color: #ffbb33;
+    }
+    
+    .timeline-details .task-list li.upcoming::before {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .timeline-percentage {
+      position: absolute;
+      bottom: -50px;
+      left: 25%;
+      transform: translateX(-50%);
+      color: var(--primary-color);
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 0.3rem 0.7rem;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      box-shadow: 0 0 10px rgba(255, 127, 0, 0.3);
+    }
+    
+    @media (max-width: 768px) {
+      .timeline-node .timeline-details {
+        width: 250px;
+      }
+      
+      .timeline-label {
+        font-size: 0.8rem;
+        top: -40px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .timeline-details {
+        width: 200px;
+        padding: 1rem;
+        font-size: 0.8rem;
+      }
+      
+      .timeline-label {
+        font-size: 0.7rem;
+        width: 80px;
+      }
+    }
+
+    .phases {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .phase-card {
+      padding: 2rem;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .phase-card:hover {
+      transform: translateY(-15px) scale(1.05) rotate(1deg);
+    }
+
+    .phase-card .status {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .phase-card .completed {
+      background-color: #00c851;
+      color: white;
+    }
+
+    .phase-card .in-progress {
+      background-color: #ffbb33;
+      color: black;
+    }
+
+    .phase-card .upcoming {
+      background-color: #33b5e5;
+      color: white;
+    }
+
+    .phase-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .phase-card ul {
+      list-style-type: none;
+    }
+
+    .phase-card li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    /* Updated check/uncheck boxes */
+    .phase-card li:before {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+    }
+
+    .phase-1 li:before {
+      content: "\f00c"; /* Checked box */
+    }
+
+    .phase-2 li:before,
+    .phase-3 li:before,
+    .phase-4 li:before {
+      content: "\f0c8"; /* Unchecked box */
+    }
+
+    /* How to buy section */
+    .how-to-buy-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .step-card {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .step-card:hover {
+      transform: translateY(-10px) scale(1.03);
+    }
+
+    .step-card:hover .step-number {
+      transform: scale(1.15);
+      background-color: #e67300;
+      box-shadow: 0 0 20px rgba(255, 127, 0, 0.5);
+    }
+
+    .step-card .step-number {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+      border: 4px solid rgba(255, 127, 0, 0.3);
+      transition: all 0.5s ease;
+    }
+
+    .step-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    @media (min-width: 768px) {
+      .step-card::after {
+        content: "";
+        position: absolute;
+        top: 3.8rem;
+        right: -3rem;
+        width: 3rem;
+        height: 2px;
+        background-color: var(--primary-color);
+        z-index: 1;
+      }
+
+      .how-to-buy-steps .step-card:last-child::after {
+        display: none;
+      }
+    }
+
+    /* Resources Section */
+    .resources-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .resource-card {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .resource-card i {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .resource-card:hover i {
+      transform: scale(1.2);
+      color: #ffcc00;
+    }
+
+    .resource-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .resource-card p {
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .resource-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      width: 100%;
+    }
+
+    .resource-link {
+      background-color: rgba(0, 0, 20, 0.3);
+      padding: 0.7rem 1rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .resource-link:hover {
+      background-color: rgba(0, 0, 20, 0.5);
+      transform: translateX(5px);
+    }
+
+    .resource-link i {
+      margin: 0;
+      font-size: 1rem;
+      transform: translateX(0);
+      transition: transform 0.3s;
+    }
+
+    .resource-link:hover i {
+      transform: translateX(5px);
+      color: var(--primary-color);
+    }
+
+    /* Community section */
+    .community-social {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .social-card {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .social-card:hover {
+      transform: translateY(-10px) scale(1.05);
+    }
+
+    .social-card:hover::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle,
+          rgba(255, 127, 0, 0.15) 0%,
+          rgba(255, 127, 0, 0) 70%);
+      transform: rotate(45deg);
+      animation: socialGlow 2s infinite;
+    }
+
+    @keyframes socialGlow {
+      0% {
+        transform: rotate(45deg) translateY(10%);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: rotate(45deg) translateY(-10%);
+        opacity: 0;
+      }
+    }
+
+    .social-card i {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      transition: all 0.5s ease;
+    }
+
+    .social-card:hover i {
+      transform: scale(1.3) rotate(15deg);
+      color: #fff;
+      text-shadow: 0 0 20px rgba(255, 127, 0, 0.8);
+    }
+
+    .social-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .social-card .members {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    /* Twitter SVG icon */
+    .twitter-icon {
+      width: 3rem;
+      height: 3rem;
+      fill: currentColor;
+      transition: all 0.5s ease;
+    }
+
+    .social-card:hover .twitter-icon {
+      transform: scale(1.3) rotate(15deg);
+      fill: #fff;
+      filter: drop-shadow(0 0 20px rgba(255, 127, 0, 0.8));
+    }
+
+    /* Newsletter section - Fixed "Stay Updated" centering */
+    .newsletter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .newsletter .section-title {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      left: auto;
+      transform: none;
+      width: 100%;
+    }
+
+    .newsletter form {
+      max-width: 500px;
+      width: 100%;
+      display: flex;
+      margin-top: 2rem;
+      position: relative;
+    }
+
+    .newsletter input {
+      flex: 1;
+      padding: 1rem;
+      border-radius: 2rem;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .newsletter input:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .newsletter input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .newsletter button {
+      position: absolute;
+      right: 0.3rem;
+      top: 0.3rem;
+      bottom: 0.3rem;
+      padding: 0 1.5rem;
+      border-radius: 1.7rem;
+      border: none;
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .newsletter button:hover {
+      background-color: #e67300;
+    }
+
+    /* Social Media Icons with brand colors */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .social-icons a {
+      font-size: 1.75rem;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+
+    .social-icons a:hover {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+    
+    .social-icons a.twitter-icon {
+      color: #000000;
+    }
+    
+    .social-icons a.telegram-icon {
+      color: #0088cc;
+    }
+    
+    .social-icons a.discord-icon {
+      color: #5865F2;
+    }
+    
+    .social-icons a.youtube-icon {
+      color: #FF0000;
+    }
+    
+    .social-icons a.reddit-icon {
+      color: #FF4500;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(180deg, rgba(26, 26, 46, 0.95) 0%, rgba(0, 0, 30, 0.98) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 4rem 5% 2rem 5%;
+      margin-bottom: 0;
+      border-top: 3px solid var(--primary-color);
+      box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    .footer-logo {
+      display: inline-block;
+    }
+
+    .footer-logo .defi {
+      color: white;
+      font-weight: 900;
+    }
+
+    .footer-logo .ant {
+      color: var(--primary-color);
+      font-weight: 900;
+    }
+
+    .footer-column p {
+      margin-bottom: 1rem;
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      list-style-type: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      opacity: 0.8;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-color);
+      opacity: 1;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom p {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    .footer-bottom a {
+      color: white;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: all 0.3s;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--primary-color);
+      opacity: 1;
+    }
+
+    /* FAQ Section */
+    #faq {
+      padding: 4rem 5%;
+      margin-bottom: var(--section-spacing);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+      padding: 0 1.2rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 1.2rem;
+      max-height: 500px; /* Adjust as needed */
+    }
+
+    /* Animation keyframes */
+    @keyframes shine {
+      0% {
+        left: -100%;
+      }
+
+      20% {
+        left: 100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    @keyframes gentle-float {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(5px, -5px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    .section {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background-color: rgba(0, 200, 0, 0.9);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      z-index: 1000;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Mobile Navigation Experience */
+    .mobile-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(20, 30, 60, 0.9);
+      backdrop-filter: blur(10px);
+      display: none;
+      z-index: 90;
+      border-top: 1px solid var(--glass-border);
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-nav-items {
+      display: flex;
+      justify-content: space-around;
+      padding: 0.8rem 0;
+    }
+
+    .mobile-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      transition: all 0.3s;
+    }
+
+    .mobile-nav-item.active {
+      color: var(--primary-color);
+      opacity: 1;
+    }
+
+    .mobile-nav-item i {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .mobile-nav-item span {
+      font-size: 0.75rem;
+    }
+
+    /* Improved Responsive Styles */
+    @media (max-width: 768px) {
+      :root {
+        --navbar-height: 70px;
+        --section-spacing: var(--spacing-lg);
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: rgba(0, 0, 40, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        width: 70%;
+        height: 100vh;
+        padding: 80px 0 30px 0;
+        transition: 0.4s;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        align-items: center;
+        z-index: 90;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links a {
+        margin: 15px 0;
+        font-size: 18px;
+      }
+
+      .hamburger.active span:first-child {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:last-child {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      .price-widget {
+        top: auto;
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+      }
+
+      section {
+        padding: 3rem 5%;
+      }
+
+      .hero {
+        padding-top: calc(var(--navbar-height) + 2rem);
+        /* Adjusted for mobile */
+        padding-bottom: 3rem;
+      }
+
+      .hero-content {
+        padding-top: 1rem;
+        /* Adjusted for mobile */
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero-image-container {
+        max-width: 90%;
+        width: 350px;
+        /* Smaller fixed width on mobile */
+        margin: 1.5rem auto 2rem;
+      }
+
+      .revolution-text {
+        font-size: 1.5rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      #about {
+        padding-top: 2rem;
+      }
+
+      .newsletter form {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .newsletter input {
+        width: 100%;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .newsletter button {
+        position: static;
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .social-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .social-icons a {
+        margin: 0.5rem;
+      }
+
+      .community-social {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+
+      .navbar {
+        padding: 1rem 5%;
+      }
+
+      /* Adjust content bottom padding to account for mobile nav */
+      #content {
+        padding-bottom: 60px;
+      }
+
+      /* Fix header ticker position for mobile */
+      .ticker-container {
+        top: var(--navbar-height);
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --navbar-height: 65px;
+        --section-spacing: var(--spacing-md);
+      }
+
+      .hero {
+        padding-top: calc(var(--navbar-height) + 1.5rem);
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding-top: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero-image-container {
+        width: 280px;
+        /* Even smaller for very small screens */
+        margin: 1rem auto 1.5rem;
+      }
+
+      .revolution-text {
+        font-size: 1.3rem;
+      }
+
+      section {
+        padding: 2rem 5%;
+      }
+
+      .phase-card,
+      .step-card,
+      .social-card {
+        padding: 1.5rem;
+      }
+
+      .community-social {
+        grid-template-columns: 1fr;
+      }
+
+      .social-card {
+        margin-bottom: 1.5rem;
+      }
+
+      .social-icons a {
+        font-size: 1.5rem;
+      }
+
+      /* Optimize animations for mobile */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content">
+    
+
+    <nav class="navbar">
+      <div class="logo">
+        <span class="defi">DEFI</span><span class="ant">ANT!</span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#how-to-buy">How to Buy</a>
+        <a href="#resources">Resources</a>
+        <a href="#community">Community</a>
+        <a href="#faq">FAQs</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>
+          <span style="color: white">DEFI</span><span style="color: var(--primary-color)">ANT!</span>
+        </h1>
+        <div class="slogan">
+          <span class="revolution-text">JOIN THE REVOLUTION!</span>
+          <div class="revolution-underline"></div>
+        </div>
+        <p>
+          Every revolution began with a single act of defiance. Be part of the
+          movement that's redefining DeFi on Solana.
+        </p>
+
+        <!-- Updated image container with lazy loading -->
+        <div class="hero-image-container">
+          <img src="https://i.imgur.com/wgBr5ua.jpg" alt="DeFi ANTS Revolution" loading="lazy" />
+        </div>
+
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary" id="buyNowBtn"><i class="fas fa-shopping-cart"></i> Buy Now</a>
+          <a href="#about" class="btn btn-secondary"><i class="fas fa-info-circle"></i> Learn More</a>
+        </div>
+
+        <!-- Buy Now Panel -->
+        <div class="buy-panel" id="buyPanel">
+          <div class="buy-panel-content glass-card">
+            <div class="buy-panel-header">
+              <h3>Choose Exchange</h3>
+              <button class="close-panel" id="closeBuyPanel">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <div class="buy-options">
+              <a href="https://pump.fun/board?utm_sour=" target="_blank" class="buy-option glass-card">
+                <div class="exchange-icon">
+                  <i class="fas fa-fire"></i>
+                </div>
+                <div class="exchange-details">
+                  <h4>Pump.fun</h4>
+                  <p>The hottest DEX for new tokens</p>
+                </div>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="https://raydium.io/swap/?inputMint=sol&outputMint=4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R" target="_blank" class="buy-option glass-card">
+                <div class="exchange-icon">
+                  <i class="fas fa-sun"></i>
+                </div>
+                <div class="exchange-details">
+                  <h4>Raydium</h4>
+                  <p>Premier Solana DEX with deep liquidity</p>
+                </div>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="https://jup.ag/swap" target="_blank" class="buy-option glass-card">
+                <div class="exchange-icon">
+                  <i class="fas fa-planet-ringed"></i>
+                </div>
+                <div class="exchange-details">
+                  <h4>Jupiter</h4>
+                  <p>Best swap aggregator for top rates</p>
+                </div>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of Buy Now Panel -->
+
+    <section id="about" class="section">
+      <h2 class="section-title"><span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span></h2>
+      <p class="section-subtitle">
+        <span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> is more than just a token—it's a movement. Built on the
+        powerful Solana blockchain, we're creating a revolutionary
+        decentralized finance ecosystem that puts power back in the hands of
+        the people.
+      </p>
+
+      <div class="about-features">
+        <div class="glass-card feature-card">
+          <i class="fas fa-bolt"></i>
+          <h3>⚡ Lightning Fast</h3>
+          <p>
+            Built on Solana for incredible transaction speeds and minimal fees
+          </p>
+        </div>
+        <div class="glass-card feature-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>🛡️ Battle-Tested Security</h3>
+          <p>Military-grade security protocols to protect your investment</p>
+        </div>
+        <div class="glass-card feature-card">
+          <i class="fas fa-users"></i>
+          <h3>👥 Community Governed</h3>
+          <p>Join an army of believers who decide the future direction</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tokenomics" class="section">
+      <h2 class="section-title"><span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> Tokenomics</h2>
+      <p class="section-subtitle">
+        Our tokenomics are designed with longevity and sustainability in mind,
+        ensuring that DEFI ANT! becomes a mainstay in the DeFi ecosystem while
+        rewarding early believers.
+      </p>
+
+      <!-- Interactive Tokenomics Pie Chart -->
+      <div class="glass-card chart-container">
+        <canvas id="tokenomicsPieChart"></canvas>
+      </div>
+
+      <div class="tokenomics-details">
+        <div class="glass-card" style="padding: 2rem; text-align: center">
+          <h3 style="margin-bottom: 1.5rem; color: var(--primary-color)">
+            Advanced Tokenomics Features
+          </h3>
+          <div style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+              ">
+            <div>
+              <h4 style="margin-bottom: 1rem">🔥 Burn Mechanism</h4>
+              <p>
+                2% of every transaction is automatically burned, creating
+                deflationary tokenomics
+              </p>
+            </div>
+            <div>
+              <h4 style="margin-bottom: 1rem">🔒 Liquidity Lock</h4>
+              <p>
+                Initial liquidity locked for 6 months to ensure long-term
+                stability
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="token-address">
+        <span>Token address: 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R</span>
+        <button class="copy-btn" data-value="4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R">Copy</button>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section">
+      <h2 class="section-title">Battle Plan</h2>
+      <p class="section-subtitle">
+        Our strategic roadmap for dominating the DeFi space
+      </p>
+
+      <!-- Interactive Roadmap Timeline -->
+      <div class="timeline-container">
+        <div class="timeline-track">
+          <div class="timeline-progress"></div>
+          <div class="timeline-nodes">
+            <div class="timeline-node active" data-phase="1">
+              <div class="timeline-node-dot"></div>
+              <div class="timeline-label">Q2 2025</div>
+              <div class="timeline-details">
+                <h4>Phase 1: Deployment</h4>
+                <p>The initial phase where we launch the token and establish our base community.</p>
+                <div class="task-list">
+                  <li class="completed">Token launch on Pump.fun</li>
+                  <li class="completed">Website and social media launch</li>
+                  <li class="completed">Initial liquidity provision</li>
+                  <li class="completed">Community building initiatives</li>
+                </div>
+              </div>
+            </div>
+            
+            <div class="timeline-node" data-phase="2">
+              <div class="timeline-node-dot"></div>
+              <div class="timeline-label">Q3 2025</div>
+              <div class="timeline-details">
+                <h4>Phase 2: Fortification</h4>
+                <p>Building on our foundation and expanding our presence in the DeFi ecosystem.</p>
+                <div class="task-list">
+                  <li class="in-progress">DEX listings</li>
+                  <li class="upcoming">Strategic partnerships</li>
+                  <li class="upcoming">Community expansion</li>
+                  <li class="upcoming">Initial development of the DeFi ANT! ecosystem</li>
+                </div>
+              </div>
+            </div>
+            
+            <div class="timeline-node" data-phase="3">
+              <div class="timeline-node-dot"></div>
+              <div class="timeline-label">Q4 2025</div>
+              <div class="timeline-details">
+                <h4>Phase 3: Advance</h4>
+                <p>Introducing new features and utilities to enhance the <span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> ecosystem.</p>
+                <div class="task-list">
+                  <li class="upcoming">Launch of staking platform</li>
+                  <li class="upcoming">Yield farming opportunities</li>
+                  <li class="upcoming">Expanded utility for ANT token holders</li>
+                  <li class="upcoming">Mobile app development begins</li>
+                </div>
+              </div>
+            </div>
+            
+            <div class="timeline-node" data-phase="4">
+              <div class="timeline-node-dot"></div>
+              <div class="timeline-label">Q1 2026</div>
+              <div class="timeline-details">
+                <h4>Phase 4: Conquer</h4>
+                <p>Global expansion and establishment of <span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> as a major player in DeFi.</p>
+                <div class="task-list">
+                  <li class="upcoming">Major CEX listings</li>
+                  <li class="upcoming">Enhanced DeFi features</li>
+                  <li class="upcoming">Cross-chain integration</li>
+                  <li class="upcoming">Expanded global community reach</li>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-percentage">25% Complete</div>
+        </div>
+      </div>
+
+      <div class="roadmap">
+        <!-- Interactive timeline replaces the phase cards -->
+      </div>
+    </section>
+
+    <section id="how-to-buy" class="section">
+      <h2 class="section-title">Enlist Now</h2>
+      <p class="section-subtitle">
+        Ready to join the revolution? Follow these simple steps to acquire
+        DeFi ANT! tokens and become part of the movement.
+      </p>
+
+      <div class="how-to-buy-steps">
+        <div class="glass-card step-card">
+          <div class="step-number">1</div>
+          <h3>🦊 Create Wallet</h3>
+          <p>Set up a Solana-compatible wallet like Phantom or Solflare</p>
+        </div>
+
+        <div class="glass-card step-card">
+          <div class="step-number">2</div>
+          <h3>💰 Get SOL</h3>
+          <p>Purchase SOL from an exchange and transfer to your wallet</p>
+        </div>
+
+        <div class="glass-card step-card">
+          <div class="step-number">3</div>
+          <h3>🔄 Visit Swap</h3>
+          <p>Connect your wallet and swap SOL for DeFi ANT!</p>
+        </div>
+
+        <div class="glass-card step-card">
+          <div class="step-number">4</div>
+          <h3>✊ Hold Strong</h3>
+          <p>Join our community and hold for future utilities and rewards</p>
+        </div>
+      </div>
+
+      <!-- Quick Buy Button -->
+      
+
+      <div style="text-align: center; margin-top: 2rem">
+        <a href="#" class="btn btn-primary buy-trigger"><i class="fas fa-external-link-alt"></i> Buy DeFi ANT!</a>
+      </div>
+    </section>
+
+    <!-- New Resources Section -->
+    <section id="resources" class="section">
+      <h2 class="section-title"><span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> Resources</h2>
+      <p class="section-subtitle">
+        New to DeFi? We've got you covered with these beginner-friendly resources to help you navigate the exciting world of decentralized finance.
+      </p>
+
+      <div class="resources-container">
+        <div class="glass-card resource-card" style="max-width: 800px; margin: 0 auto;">
+          <i class="fas fa-book-open" style="font-size: 3rem;"></i>
+          <h3>Essential DeFi Resources</h3>
+          <p>Everything you need to get started in the world of decentralized finance - from basic concepts to advanced trading strategies.</p>
+          
+          <div class="resource-links" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 2rem;">
+            <div>
+              <h4 style="margin-bottom: 1rem; color: var(--primary-color);"><i class="fas fa-graduation-cap"></i> DeFi Basics</h4>
+              <a href="#" class="resource-link">
+                <span>DeFi for Beginners Guide</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#" class="resource-link">
+                <span>Understanding Blockchain Technology</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#" class="resource-link">
+                <span>What are Smart Contracts?</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            
+            <div>
+              <h4 style="margin-bottom: 1rem; color: var(--primary-color);"><i class="fas fa-wallet"></i> Wallet Setup</h4>
+              <a href="#" class="resource-link">
+                <span>Solana Wallet Guide (Phantom)</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#" class="resource-link">
+                <span>Hardware vs. Software Wallets</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#" class="resource-link">
+                <span>Securing Your Crypto Assets</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+            
+            <div>
+              <h4 style="margin-bottom: 1rem; color: var(--primary-color);"><i class="fas fa-exchange-alt"></i> Trading Basics</h4>
+              <a href="#" class="resource-link">
+                <span>How to Trade on DEXs</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#" class="resource-link">
+                <span>Understanding Liquidity Pools</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#" class="resource-link">
+                <span>Impermanent Loss Explained</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem">
+        <a href="#" class="btn btn-secondary">
+          <i class="fas fa-book"></i> View All Resources
+        </a>
+      </div>
+    </section>
+
+    <section id="community" class="section">
+      <h2 class="section-title">Join The ANT Army</h2>
+      <p class="section-subtitle">
+        DeFi ANT! is building a strong, engaged community of revolutionaries
+        committed to changing the financial landscape forever.
+      </p>
+      <div class="community-social">
+        <div class="glass-card social-card">
+          <div style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--primary-color);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="twitter-icon">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </div>
+          <h3>X</h3>
+          <div class="members">15K+ Followers</div>
+          <p>
+            Follow us for the latest updates, announcements, and community
+            activities
+          </p>
+          <a href="#" class="btn btn-secondary" style="margin-top: 1rem">
+            <i class="fas fa-user-plus"></i> Follow
+          </a>
+        </div>
+        <div class="glass-card social-card">
+          <i class="fab fa-telegram"></i>
+          <h3>Telegram 📱</h3>
+          <div class="members">8K+ Members</div>
+          <p>
+            Join our Telegram group for real-time discussions and direct team
+            access
+          </p>
+          <a href="#" class="btn btn-secondary" style="margin-top: 1rem">
+            <i class="fas fa-comment"></i> Join
+          </a>
+        </div>
+        <div class="glass-card social-card">
+          <i class="fab fa-discord"></i>
+          <h3>Discord</h3>
+          <div class="members">12K+ Members</div>
+          <p>
+            Be part of our growing Discord community with exclusive perks and
+            events
+          </p>
+          <a href="#" class="btn btn-secondary" style="margin-top: 1rem">
+            <i class="fas fa-headset"></i> Join
+          </a>
+        </div>
+        <div class="glass-card social-card">
+          <i class="fab fa-youtube"></i>
+          <h3>YouTube</h3>
+          <div class="members">5K+ Subscribers</div>
+          <p>
+            Watch tutorials, AMA sessions, and stay updated with our latest
+            video content
+          </p>
+          <a href="#" class="btn btn-secondary" style="margin-top: 1rem">
+            <i class="fas fa-play"></i> Subscribe
+          </a>
+        </div>
+        <div class="glass-card social-card">
+          <i class="fab fa-reddit"></i>
+          <h3>Reddit</h3>
+          <div class="members">3K+ Members</div>
+          <p>
+            Join discussions, share ideas, and connect with fellow ANTS in our
+            subreddit
+          </p>
+          <a href="#" class="btn btn-secondary" style="margin-top: 1rem">
+            <i class="fas fa-arrow-up"></i> Join
+          </a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem">
+        <p style="margin-bottom: 1.5rem">
+          Don't miss out on the revolution. Join thousands of like-minded
+          individuals who believe in financial freedom and decentralization.
+        </p>
+        <a href="#" class="btn btn-primary">
+          <i class="fas fa-users"></i> Join the ANT Army
+        </a>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">
+        Get answers to the most common questions about DeFi ANT!
+      </p>
+      
+      <div class="faq-container">
+        <div class="glass-card faq-item">
+          <div class="faq-question">
+            <h3>What is <span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span>?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p><span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> is a revolutionary community-driven token built on the Solana blockchain. Our mission is to redefine decentralized finance by providing lightning-fast transactions with minimal fees while building a strong, engaged community.</p>
+          </div>
+        </div>
+        
+        <div class="glass-card faq-item">
+          <div class="faq-question">
+            <h3>How can I buy <span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> tokens?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>You can purchase <span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> tokens through several exchanges, including Pump.fun, Raydium, and Jupiter. Simply connect your Solana wallet and swap SOL for <span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> tokens. For detailed instructions, check our "How to Buy" section.</p>
+          </div>
+        </div>
+        
+        <div class="glass-card faq-item">
+          <div class="faq-question">
+            <h3>What makes <span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> different from other tokens?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p><span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> stands out through our commitment to community governance, lightning-fast transactions on Solana, military-grade security, and sustainable tokenomics with automated burn mechanisms. We're not just another token—we're building a revolution.</p>
+          </div>
+        </div>
+        
+        <div class="glass-card faq-item">
+          <div class="faq-question">
+            <h3>Is <span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> secure?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely. <span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> is built on the Solana blockchain, known for its robust security. Additionally, we employ military-grade security protocols and have implemented extensive measures to protect our community's investments.</p>
+          </div>
+        </div>
+        
+        <div class="glass-card faq-item">
+          <div class="faq-question">
+            <h3>How can I get involved in the community?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Join our thriving community on social platforms like Telegram, Discord, Twitter (X), Reddit, and YouTube. Participate in discussions, attend AMAs, and contribute to community initiatives. Check our "Community" section for direct links.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="section glass-card newsletter">
+      <h2 class="section-title">Stay Updated</h2>
+      <p>
+        Subscribe to our newsletter for the latest <span style="color: white;">DEFI</span><span style="color: var(--primary-color);">ANT!</span> news, updates,
+        and exclusive opportunities. 📧
+      </p>
+
+      <form>
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3 class="footer-logo"><span class="defi">DEFI</span><span class="ant">ANT!</span></h3>
+          <p>
+            A revolutionary community-driven token built on the Solana
+            blockchain, designed to defy traditional finance and empower
+            users. 🐜🐜🐜
+          </p>
+
+          <div class="social-icons">
+            <a href="#" aria-label="X" class="twitter-icon"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Telegram" class="telegram-icon"><i class="fab fa-telegram"></i></a>
+            <a href="#" aria-label="Discord" class="discord-icon"><i class="fab fa-discord"></i></a>
+            <a href="#" aria-label="YouTube" class="youtube-icon"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Reddit" class="reddit-icon"><i class="fab fa-reddit"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#tokenomics">Tokenomics</a></li>
+            <li><a href="#roadmap">Roadmap</a></li>
+            <li><a href="#how-to-buy">How to Buy</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#faq">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#">Whitepaper</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Brand Assets</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#">Media Kit</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:info@defiant.com">info@defiant.com</a></li>
+            <li><a href="https://www.defiant.com">www.defiant.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 DeFi ANT! All rights reserved. 🐜</p>
+        <div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-items">
+      <a href="#about" class="mobile-nav-item">
+        <i class="fas fa-info-circle"></i>
+        <span>About</span>
+      </a>
+      <a href="#tokenomics" class="mobile-nav-item">
+        <i class="fas fa-chart-pie"></i>
+        <span>Tokenomics</span>
+      </a>
+      <a href="#roadmap" class="mobile-nav-item">
+        <i class="fas fa-map-marked-alt"></i>
+        <span>Roadmap</span>
+      </a>
+      <a href="#" class="mobile-nav-item buy-trigger">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Buy</span>
+      </a>
+      <a href="#community" class="mobile-nav-item">
+        <i class="fas fa-users"></i>
+        <span>Community</span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Wait for DOM to be fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      // Mobile menu functionality
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+      if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navLinks.classList.toggle("active");
+        });
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navLinks.classList.remove("active");
+          });
+        });
+      }
+
+      // Copy functionality for all copy buttons
+      function setupCopyButtons() {
+        document.querySelectorAll('.copy-btn, .copy-link-btn').forEach(button => {
+          button.addEventListener('click', () => {
+            const textToCopy = button.getAttribute('data-value');
+            navigator.clipboard.writeText(textToCopy).then(() => {
+              // Show toast notification
+              const toast = document.getElementById('toast');
+              toast.textContent = 'Copied to clipboard!';
+              toast.classList.add('show');
+              
+              // Change button text temporarily
+              const originalText = button.innerHTML;
+              button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+              
+              // Reset after 2 seconds
+              setTimeout(() => {
+                toast.classList.remove('show');
+                button.innerHTML = originalText;
+              }, 2000);
+            });
+          });
+        });
+      }
+      
+      setupCopyButtons();
+
+      // Buy Panel functionality
+      const buyPanel = document.getElementById("buyPanel");
+      const buyNowBtn = document.getElementById("buyNowBtn");
+      const closeBuyPanel = document.getElementById("closeBuyPanel");
+      const buyTriggers = document.querySelectorAll(".buy-trigger");
+
+      function openBuyPanel() {
+        buyPanel.classList.add("active");
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+      }
+
+      function closeBuyPanelFunc() {
+        buyPanel.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+      if (buyNowBtn && buyPanel) {
+        buyNowBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          openBuyPanel();
+        });
+      }
+      if (closeBuyPanel) {
+        closeBuyPanel.addEventListener("click", closeBuyPanelFunc);
+      }
+      if (buyTriggers.length > 0) {
+        buyTriggers.forEach((trigger) => {
+          trigger.addEventListener("click", (e) => {
+            e.preventDefault();
+            openBuyPanel();
+          });
+        });
+      }
+      // Close panel when clicking outside
+      buyPanel.addEventListener("click", (e) => {
+        if (e.target === buyPanel) {
+          closeBuyPanelFunc();
+        }
+      });
+      // Close panel on escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && buyPanel.classList.contains("active")) {
+          closeBuyPanelFunc();
+        }
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function(e) {
+          if (this.getAttribute("href") === "#") return;
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+      
+      // FAQ functionality
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          // Toggle active state
+          item.classList.toggle('active');
+        });
+      });
+      
+      // Create interactive tokenomics pie chart
+      const tokenomicsCtx = document.getElementById('tokenomicsPieChart').getContext('2d');
+      const tokenomicsData = {
+        labels: ['Community (50%)', 'Development (20%)', 'Marketing (15%)', 'Team (10%)', 'Reserves (5%)'],
+        datasets: [{
+          data: [50, 20, 15, 10, 5],
+          backgroundColor: [
+            'rgba(255, 127, 0, 0.8)',
+            'rgba(54, 162, 235, 0.8)',
+            'rgba(255, 206, 86, 0.8)',
+            'rgba(75, 192, 192, 0.8)',
+            'rgba(153, 102, 255, 0.8)'
+          ],
+          borderColor: [
+            'rgba(255, 127, 0, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }]
+      };
+      
+      const tokenomicsChart = new Chart(tokenomicsCtx, {
+        type: 'pie',
+        data: tokenomicsData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: {
+              position: 'right',
+              labels: {
+                color: 'white',
+                font: {
+                  size: 14
+                }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return `${context.label.split(' ')[0]}: ${context.raw}%`;
+                }
+              }
+            }
+          },
+          animation: {
+            animateRotate: true,
+            animateScale: true
+          }
+        }
+      });
+
+      // Timeline node interactions
+      const timelineNodes = document.querySelectorAll('.timeline-node');
+      
+      timelineNodes.forEach(node => {
+        node.addEventListener('mouseenter', () => {
+          const details = node.querySelector('.timeline-details');
+          details.style.opacity = '1';
+          details.style.visibility = 'visible';
+        });
+        
+        node.addEventListener('mouseleave', () => {
+          const details = node.querySelector('.timeline-details');
+          details.style.opacity = '0';
+          details.style.visibility = 'hidden';
+        });
+        
+        node.addEventListener('click', () => {
+          // Clear active class from all nodes
+          timelineNodes.forEach(n => n.classList.remove('active'));
+          
+          // Add active class to clicked node
+          node.classList.add('active');
+          
+          // Get phase number and update progress
+          const phase = parseInt(node.getAttribute('data-phase'));
+          updateProgress(phase);
+        });
+      });
+      
+      function updateProgress(phase) {
+        const progress = document.querySelector('.timeline-progress');
+        const percentage = document.querySelector('.timeline-percentage');
+        
+        // Calculate progress percentage based on phase
+        let progressValue;
+        let percentText;
+        
+        switch(phase) {
+          case 1:
+            progressValue = '25%';
+            percentText = '25% Complete';
+            break;
+          case 2:
+            progressValue = '50%';
+            percentText = '50% Complete';
+            break;
+          case 3:
+            progressValue = '75%';
+            percentText = '75% Complete';
+            break;
+          case 4:
+            progressValue = '100%';
+            percentText = '100% Complete';
+            break;
+          default:
+            progressValue = '25%';
+            percentText = '25% Complete';
+        }
+        
+        progress.style.width = progressValue;
+        percentage.textContent = percentText;
+        
+        // Update position of percentage indicator
+        percentage.style.left = progressValue;
+      }
+      
+      // Add animated highlights to sections with proper timing
+      const sections = document.querySelectorAll(".section");
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+      const sectionsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            sectionsObserver.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach((section) => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(30px)";
+        section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        sectionsObserver.observe(section);
+      });
+      
+      // Add military-themed floating elements for background effect
+      const content = document.getElementById("content");
+      const colors = [
+        'rgba(255, 215, 0, 0.06)',
+        'rgba(200, 16, 46, 0.05)',
+        'rgba(0, 40, 104, 0.05)',
+        'rgba(75, 83, 32, 0.04)'
+      ];
+
+      for (let i = 0; i < 15; i++) {
+        const floater = document.createElement("div");
+        floater.className = "floating-element";
+        floater.style.position = "fixed";
+        floater.style.width = `${Math.random() * 25 + 10}px`;
+        floater.style.height = floater.style.width;
+        floater.style.borderRadius = "50%";
+        floater.style.background = colors[Math.floor(Math.random() * colors.length)];
+        floater.style.left = `${Math.random() * 100}vw`;
+        floater.style.top = `${Math.random() * 100}vh`;
+        floater.style.pointerEvents = "none";
+        floater.style.zIndex = "-1";
+        floater.style.filter = "blur(2px)";
+
+        // Gentle float animation only
+        const duration = Math.random() * 20 + 25;
+        const delay = Math.random() * 5;
+        floater.style.animation = `gentle-float ${duration}s ease-in-out ${delay}s infinite`;
+        content.appendChild(floater);
+      }
+      
+      // Highlight active section in mobile navigation
+      function updateActiveSection() {
+        const sections = document.querySelectorAll('section');
+        const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+        
+        let currentSection = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          
+          if (window.pageYOffset >= (sectionTop - 150)) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+        
+        mobileNavItems.forEach(item => {
+          item.classList.remove('active');
+          
+          const href = item.getAttribute('href');
+          if (href && href === `#${currentSection}`) {
+            item.classList.add('active');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', updateActiveSection);
+      
+      // Simulate live price ticker updates
+      function updatePriceTicker() {
+        const antPrice = document.getElementById('ant-price');
+        const antPriceRepeat = document.getElementById('ant-price-repeat');
+        
+        if (antPrice && antPriceRepeat) {
+          // Generate random price fluctuation
+          const basePrice = 0.0325;
+          const variation = (Math.random() * 0.002) - 0.001;
+          const newPrice = (basePrice + variation).toFixed(4);
+          
+          antPrice.textContent = `${newPrice}`;
+          antPriceRepeat.textContent = `${newPrice}`;
+          
+          // Update price color based on increase/decrease
+          const priceChanges = document.querySelectorAll('.price-up, .price-down');
+          priceChanges.forEach(change => {
+            if (Math.random() > 0.5) {
+              change.className = 'price-up';
+              change.textContent = `+${(Math.random() * 5).toFixed(1)}%`;
+            } else {
+              change.className = 'price-down';
+              change.textContent = `-${(Math.random() * 3).toFixed(1)}%`;
+            }
+          });
+        }
+        
+        setTimeout(updatePriceTicker, 5000); // Update every 5 seconds
+      }
+      
+      // Start price ticker updates
+      updatePriceTicker();
+      
+      // Add shine effect to buttons
+      const buttons = document.querySelectorAll(".btn");
+      buttons.forEach((button) => {
+        const shine = document.createElement("div");
+        shine.className = "btn-shine";
+        shine.style.position = "absolute";
+        shine.style.top = "0";
+        shine.style.left = "-100%";
+        shine.style.width = "100%";
+        shine.style.height = "100%";
+        shine.style.background =
+          "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%)";
+        shine.style.animation = "shine 3s infinite";
+        shine.style.pointerEvents = "none";
+        button.style.position = "relative";
+        button.style.overflow = "hidden";
+        button.appendChild(shine);
+      });
+      
+      // Lazy loading for images
+      document.addEventListener('DOMContentLoaded', function() {
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        
+        if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const image = entry.target;
+                image.src = image.dataset.src;
+                imageObserver.unobserve(image);
+              }
+            });
+          });
+          
+          lazyImages.forEach(image => {
+            imageObserver.observe(image);
+          });
+        } else {
+          // Fallback for browsers that don't support IntersectionObserver
+          lazyImages.forEach(image => {
+            image.src = image.dataset.src;
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
